@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjoli Kedia - Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        blue: {
+                            50: '#E6F0FA',
+                            400: '#3399FF',
+                            700: '#00509E',
+                            900: '#003366',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #E6F0FA; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00509E; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #003366; 
+        }
+
+        /* Animation Classes */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Sticky Nav Transition */
+        #navbar {
+            transition: all 0.3s ease;
+        }
+        .nav-scrolled {
+            background-color: rgba(0, 51, 102, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-blue-50 text-gray-800 font-sans antialiased selection:bg-blue-400 selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 top-0 py-4 bg-blue-900 text-white">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold tracking-wider">SK<span class="text-blue-400">.</span></a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-blue-400 transition-colors">Home</a>
+                <a href="#profile" class="hover:text-blue-400 transition-colors">Profile</a>
+                <a href="#experience" class="hover:text-blue-400 transition-colors">Experience</a>
+                <a href="#publications" class="hover:text-blue-400 transition-colors">Publications</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills & Edu</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-900 absolute w-full left-0 top-full flex flex-col items-center py-4 space-y-4 shadow-xl">
+            <a href="#home" class="mobile-link hover:text-blue-400 transition-colors">Home</a>
+            <a href="#profile" class="mobile-link hover:text-blue-400 transition-colors">Profile</a>
+            <a href="#experience" class="mobile-link hover:text-blue-400 transition-colors">Experience</a>
+            <a href="#publications" class="mobile-link hover:text-blue-400 transition-colors">Publications</a>
+            <a href="#skills" class="mobile-link hover:text-blue-400 transition-colors">Skills & Edu</a>
+            <a href="#contact" class="mobile-link hover:text-blue-400 transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Home/Hero Section -->
+    <header id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-700 text-white pt-20">
+        <div class="container mx-auto px-6 md:px-12 text-center fade-in-up">
+            <div class="w-32 h-32 mx-auto bg-blue-400 rounded-full flex items-center justify-center mb-8 shadow-2xl border-4 border-blue-50">
+                <span class="text-5xl font-bold text-white">SK</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Sanjoli Kedia</h1>
+            <p class="text-xl md:text-2xl font-light text-blue-50 mb-8 max-w-2xl mx-auto">
+                Assistant Professor | HR Specialist | Gold Medallist
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="mailto:kediasanjoli@gmail.com" class="px-8 py-3 bg-blue-400 hover:bg-blue-50 hover:text-blue-900 text-white rounded-full font-medium transition-all shadow-lg flex items-center gap-2">
+                    <i class="fas fa-envelope"></i> Email Me
+                </a>
+                <a href="tel:+919454597104" class="px-8 py-3 bg-transparent border-2 border-blue-400 hover:bg-blue-400 text-white rounded-full font-medium transition-all shadow-lg flex items-center gap-2">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <section id="profile" class="py-20 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Profile Overview</h2>
+                <div class="w-24 h-1 bg-blue-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-blue-50 p-8 rounded-2xl shadow-sm fade-in-up">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-4"><i class="fas fa-bullseye mr-2"></i> Career Objective</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        To grow as an indispensable asset, to place in a result-oriented and progressive organization where I can fully utilize my enhanced skills and work for the all-around growth of the organization.
+                    </p>
+                </div>
+                <div class="bg-blue-50 p-8 rounded-2xl shadow-sm fade-in-up" style="transition-delay: 0.1s;">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-4"><i class="fas fa-user mr-2"></i> Profile Summary</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><i class="fas fa-check-circle text-blue-400 mr-2"></i> Innovative and Creative individual with a high learning curve.</li>
+                        <li><i class="fas fa-check-circle text-blue-400 mr-2"></i> Comprehensive Problem Solving abilities.</li>
+                        <li><i class="fas fa-check-circle text-blue-400 mr-2"></i> <strong>Languages:</strong> English, Hindi, and German.</li>
+                        <li><i class="fas fa-check-circle text-blue-400 mr-2"></i> <strong>Date of Birth:</strong> 21st March 1990</li>
+                        <li><i class="fas fa-check-circle text-blue-400 mr-2"></i> <strong>Hobbies:</strong> Team events, Music, Creative Painting.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Professional Experience</h2>
+                <div class="w-24 h-1 bg-blue-400 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto relative border-l-4 border-blue-400 pl-8 space-y-12">
+                <!-- Timeline Item 1 -->
+                <div class="relative fade-in-up">
+                    <div class="absolute -left-10 bg-blue-900 h-6 w-6 rounded-full border-4 border-blue-50"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <span class="text-blue-400 font-semibold text-sm">June 2016 - Present</span>
+                        <h3 class="text-xl font-bold text-blue-900 mt-1">Assistant Professor</h3>
+                        <h4 class="text-md text-blue-700 font-medium mb-3">International Institute for Special Education, Lucknow</h4>
+                        <p class="text-gray-600">Holding subjects in PGDM, BBA, and MCA programmes including Human Resource Management, Business Communication, and General Management.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative fade-in-up">
+                    <div class="absolute -left-10 bg-blue-400 h-6 w-6 rounded-full border-4 border-blue-50"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <span class="text-blue-400 font-semibold text-sm">February 2014 - May 2016</span>
+                        <h3 class="text-xl font-bold text-blue-900 mt-1">Assistant Professor</h3>
+                        <h4 class="text-md text-blue-700 font-medium mb-3">Bora Institute of Management Sciences, Lucknow</h4>
+                        <p class="text-gray-600 mb-2">Subjects Taught (BBA, MBA, Int. PGDM):</p>
+                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                            <li>Business Law & Rural Management</li>
+                            <li>Research Methodology & Entrepreneurship Development</li>
+                            <li>Leadership and Personality Development</li>
+                            <li>Human Resource Management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative fade-in-up">
+                    <div class="absolute -left-10 bg-blue-400 h-6 w-6 rounded-full border-4 border-blue-50"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                        <span class="text-blue-400 font-semibold text-sm">June 2013 - January 2014</span>
+                        <h3 class="text-xl font-bold text-blue-900 mt-1">Lecturer</h3>
+                        <h4 class="text-md text-blue-700 font-medium mb-3">Subhash Chandra Bose Institute of Higher Education, Lucknow</h4>
+                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                            <li>Advisory role in Top management.</li>
+                            <li>Regulating extra-curricular activities.</li>
+                            <li>Organising and coordinating Conferences, Events and Workshops.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Research & Publications</h2>
+                <div class="w-24 h-1 bg-blue-400 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Contributions to academia through various research papers, journals, and international seminars.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in-up">
+                <!-- Publication Items -->
+                <div class="p-5 border border-blue-100 rounded-xl hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-file-alt text-blue-400 text-xl mb-3"></i>
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        Presented a paper on <strong>"Availability and Adequacy of Economic and Social Infrastructure in Uttar Pradesh"</strong> in the International Seminar on Rural Industrialization, University of Lucknow (Feb 2022).
+                    </p>
+                </div>
+                <div class="p-5 border border-blue-100 rounded-xl hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-book-open text-blue-400 text-xl mb-3"></i>
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        Published <strong>"Work from Home and its impact on Human Resources Management in India"</strong> in UGC Care Group 1 Journal (Rabindra Bharti Journal of Philosophy, 2022).
+                    </p>
+                </div>
+                <div class="p-5 border border-blue-100 rounded-xl hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-book-open text-blue-400 text-xl mb-3"></i>
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        Published <strong>"Impact of COVID-19 Pandemic on Agriculture in India"</strong> in International Journal of Human Development and Information Systems (July-Dec 2021).
+                    </p>
+                </div>
+                <div class="p-5 border border-blue-100 rounded-xl hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-book-open text-blue-400 text-xl mb-3"></i>
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        Published <strong>"An appraisal on Relationship between Psychological Contract and HR Processes..."</strong> in Int. Journal of Rural Development and Management Studies (July-Dec 2021).
+                    </p>
+                </div>
+                <div class="p-5 border border-blue-100 rounded-xl hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-book text-blue-400 text-xl mb-3"></i>
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        Published a chapter on <strong>"Role of Ethics and Values in Sustainability of Organization"</strong> in the edited book "Start-up: A Drive towards Self-Reliant India".
+                    </p>
+                </div>
+                <div class="p-5 border border-blue-100 rounded-xl hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-book text-blue-400 text-xl mb-3"></i>
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        Published a chapter on <strong>"An Impact of Work from Home on Professional Teachers During COVID-19..."</strong> in the edited book "Work From Home".
+                    </p>
+                </div>
+                <div class="p-5 border border-blue-100 rounded-xl hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-book text-blue-400 text-xl mb-3"></i>
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        Published a chapter on <strong>"Corporate Governance during COVID-19 Pandemic in India"</strong> in the edited book "COVID-19 Pandemic".
+                    </p>
+                </div>
+                <div class="p-5 border border-blue-100 rounded-xl hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-chalkboard-teacher text-blue-400 text-xl mb-3"></i>
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        Presented <strong>"Scope and Opportunities in Higher Education in UP Post COVID-19"</strong> at Mahatma Gandhi Central University, Bihar (May 2020).
+                    </p>
+                </div>
+                 <div class="p-5 border border-blue-100 rounded-xl hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-file-alt text-blue-400 text-xl mb-3"></i>
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        Published <strong>"Study of Human Resource Accounting to know the monetary value of employees..."</strong> at BBAU Central University International Conference (ICCPMPSD).
+                    </p>
+                </div>
+                 <div class="p-5 border border-blue-100 rounded-xl hover:bg-blue-50 transition-colors">
+                    <i class="fas fa-chalkboard-teacher text-blue-400 text-xl mb-3"></i>
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                        Presented <strong>"Study of Human Resource Accounting to know the monetary value of employees..."</strong> in the NIPM Annual Conference UP Chapter (May 2017).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Education Section -->
+    <section id="skills" class="py-20 bg-blue-900 text-white">
+        <div class="container mx-auto px-6 md:px-12">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Education & Achievements -->
+                <div class="fade-in-up">
+                    <h2 class="text-3xl font-bold mb-8 text-blue-50"><i class="fas fa-graduation-cap mr-3 text-blue-400"></i>Education & Awards</h2>
+                    <div class="space-y-6">
+                        <div class="bg-blue-800 p-6 rounded-xl border-l-4 border-yellow-400">
+                            <h3 class="text-xl font-bold text-white">Master's in Business Administration (HR)</h3>
+                            <p class="text-blue-400 mb-2">Amity University, Lucknow (2011-2013)</p>
+                            <p class="text-sm"><i class="fas fa-medal text-yellow-400 mr-2"></i><strong>Gold Medallist</strong> in Academics. Won a Scholarship of Rs. 83,000/- for being a topper in all four semesters.</p>
+                        </div>
+                        <div class="bg-blue-800 p-6 rounded-xl border-l-4 border-blue-400">
+                            <h3 class="text-xl font-bold text-white">Bachelor of Commerce</h3>
+                            <p class="text-blue-400 mb-2">Lucknow University (2011)</p>
+                            <p class="text-sm">Scored 62.5%</p>
+                        </div>
+                        <div class="bg-blue-800 p-6 rounded-xl border-l-4 border-yellow-400">
+                            <h3 class="text-xl font-bold text-white">NPTEL Certification</h3>
+                            <p class="text-blue-400 mb-2">Feb - March 2018</p>
+                            <p class="text-sm"><i class="fas fa-medal text-yellow-400 mr-2"></i><strong>Gold Medal</strong> on "Principles of Human Resource Management".</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills & Competencies -->
+                <div class="fade-in-up" style="transition-delay: 0.2s;">
+                    <h2 class="text-3xl font-bold mb-8 text-blue-50"><i class="fas fa-cogs mr-3 text-blue-400"></i>Core Competencies</h2>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="bg-blue-800 p-4 rounded-lg flex items-center shadow-md">
+                            <i class="fas fa-sitemap text-2xl text-blue-400 w-10"></i>
+                            <span class="font-medium">Excellent Organisational skills</span>
+                        </div>
+                        <div class="bg-blue-800 p-4 rounded-lg flex items-center shadow-md">
+                            <i class="fas fa-users text-2xl text-blue-400 w-10"></i>
+                            <span class="font-medium text-sm">People-Oriented & Teaching Skills</span>
+                        </div>
+                        <div class="bg-blue-800 p-4 rounded-lg flex items-center shadow-md">
+                            <i class="fas fa-comments text-2xl text-blue-400 w-10"></i>
+                            <span class="font-medium">Influential Communication</span>
+                        </div>
+                        <div class="bg-blue-800 p-4 rounded-lg flex items-center shadow-md">
+                            <i class="fas fa-forward text-2xl text-blue-400 w-10"></i>
+                            <span class="font-medium">Proactive Approach</span>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-4 text-blue-400">Technical Skills</h3>
+                    <div class="bg-blue-800 p-6 rounded-xl mb-8">
+                        <p class="mb-2"><i class="fab fa-windows w-6"></i> <strong>OS:</strong> Windows XP, Vista, and 7</p>
+                        <p><i class="fas fa-file-word w-6"></i> <strong>Software:</strong> MS Office 2003-07-10</p>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-4 text-blue-400">Extra Curricular</h3>
+                    <ul class="space-y-2 text-sm bg-blue-800 p-6 rounded-xl">
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i> Participated in FDP organized by IIM, Ahmedabad (June - Sept 2015).</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i> Participated in Para Military Training camp at Manesar.</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i> Prepared Neuro-linguistic project (Models and Meta-Models).</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i> Prepared Social Awareness project on AIDS & business plan for OXFAM.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-6 md:px-12 text-center fade-in-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Get In Touch</h2>
+            <div class="w-24 h-1 bg-blue-400 mx-auto rounded-full mb-12"></div>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 max-w-4xl mx-auto">
+                <a href="mailto:kediasanjoli@gmail.com" class="group w-full md:w-1/3 bg-white p-8 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-700 group-hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-blue-900 mb-2">Email</h3>
+                    <p class="text-gray-600 text-sm break-words">kediasanjoli@gmail.com</p>
+                </a>
+
+                <a href="tel:+919454597104" class="group w-full md:w-1/3 bg-white p-8 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-700 group-hover:text-white transition-colors">
+                        <i class="fas fa-phone-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-blue-900 mb-2">Phone</h3>
+                    <p class="text-gray-600 text-sm">+91 9454597104</p>
+                </a>
+
+                <div class="group w-full md:w-1/3 bg-white p-8 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-700 group-hover:text-white transition-colors">
+                        <i class="fas fa-map-marker-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-blue-900 mb-2">Location</h3>
+                    <p class="text-gray-600 text-sm">42, Shankar Nagar,<br>Nirala Nagar, Lucknow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-blue-100 py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p class="text-sm">&copy; <span id="year"></span> Sanjoli Kedia. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Sticky Nav styling on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+                navbar.classList.remove('bg-blue-900');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+                navbar.classList.add('bg-blue-900');
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Optional: animate only once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach((elem) => {
+            observer.observe(elem);
+        });
+    </script>
+</body>
+</html>
